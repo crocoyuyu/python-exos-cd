@@ -1,4 +1,22 @@
-﻿import csv
+"""
+Notes étudiantes
+On travaille à partir d'un fichier où chaque ligne correspond à une inscription à un cours :
+   Etudiant;Cours;Note
+   Alice;Python;15
+   Marc;Python;12
+   Alice;Statistiques;14
+   Julie;Python;16
+   Marc;Bases_de_donnees;13
+   Alice;Bases_de_donnees;15
+   Julie;Statistiques;17
+Le programme doit créer un nouveau fichier structuré où chaque étudiant n’apparaît qu’une seule fois, et où les notes sont regroupées par cours (si l'étudiant n'a pas suivi un cours, le champ correspondant reste vide) :
+   Etudiant;Python;Statistiques;Bases_de_donnees
+   Alice;15;14;15
+   Marc;12;;13
+   Julie;16;17
+"""
+
+import csv
 inscriptions=[]
 fichier1=open('C:/temp/inscription.csv', encoding='utf-8')
 lecteur = csv.DictReader(fichier1, delimiter=';')
